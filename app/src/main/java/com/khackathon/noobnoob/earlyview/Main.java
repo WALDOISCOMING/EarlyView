@@ -28,7 +28,7 @@ import layout.testFragment;
 수정일자:x
 메인이ㅏㄷ.ㅁㄴㅇ
 
-
+ㅁㄴㅇ
 
  */
 public class Main extends AppCompatActivity
