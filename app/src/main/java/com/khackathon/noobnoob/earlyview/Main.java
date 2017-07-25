@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.khackathon.noobnoob.earlyview.review.ReviewController;
+
 import layout.test2Fragment;
 import layout.testFragment;
 
@@ -34,6 +36,10 @@ import layout.testFragment;
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    /*
+    controller들은 오직 하나만 존재하면된다.
+
+     */
 
 
 
@@ -75,9 +81,12 @@ public class Main extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //시작 프레그먼트 set
         onstartFragementSet();
-        Button button = (Button)findViewById(R.id.changeButton);
 
+
+
+        Button button = (Button)findViewById(R.id.changeButton);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

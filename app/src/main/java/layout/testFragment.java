@@ -11,9 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.khackathon.noobnoob.earlyview.R;
+import com.khackathon.noobnoob.earlyview.review.Review;
+import com.khackathon.noobnoob.earlyview.review.ReviewController;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 /*
 생성자:길경완
@@ -28,26 +31,48 @@ public class testFragment extends Fragment {
 
     ArrayList<String> mData = new ArrayList<String>();
 
+    ReviewController reviewController = ReviewController.getInstance();
+
     public testFragment() {
     }
+
+    private void setReviewArrayList()
+    {
+        Review[] reivews = new Review[10];
+        Date date =new Date();
+            for(int i=0;i<10;i++)
+                reivews[i] = new Review();
+            reivews[0].setdumiReview(1, 1, date, "제목1", "내용1", 1, "삼성", 10, 1, "핸드폰부문");
+            reivews[1].setdumiReview(2, 1, date, "제목2", "내용2", 2, "현대", 10, 1, "자동차부문");
+            reivews[2].setdumiReview(3, 1, date, "제목3", "내용3", 3, "LG", 10, 1, "핸드폰부문");
+            reivews[3].setdumiReview(4, 1, date, "제목4", "내용4", 4, "HP", 10, 1, "컴퓨터부문");
+            reivews[4].setdumiReview(5, 1, date, "제목5", "내용5", 5, "애플", 10, 1, "핸드폰부문");
+            reivews[5].setdumiReview(6, 1, date, "제목6", "내용6", 1, "삼성", 10, 1, "핸드폰부문");
+            reivews[6].setdumiReview(7, 1, date, "제목7", "내용7", 2, "현대", 10, 1, "자동차부문");
+            reivews[7].setdumiReview(8, 1, date, "제목8", "내용8", 3, "LG", 10, 1, "가전기기");
+            reivews[8].setdumiReview(9, 1, date, "제목9", "내용9", 4, "HP", 10, 1, "컴퓨터부문");
+            reivews[9].setdumiReview(10, 1, date, "제목10", "내용10", 5, "애플", 10, 1, "컴퓨터부문");
+            ArrayList<Review> reviewArrayList = new ArrayList<Review>();
+
+
+            for(int i=0;i<reivews.length;i++)
+            {
+                reviewArrayList.add(reivews[i]);
+            }
+
+            reviewController.setdumitReivew(reviewArrayList,"컴퓨터부문");
+
+
+    }
+
     private void setmData()
     {
-
-        mData.add(0,"리뷰1");
-        mData.add(1,"리뷰2");
-        mData.add(2,"리뷰3");
-        mData.add(3,"리뷰4");
-        mData.add(4,"리뷰5");
-        mData.add(5,"리뷰6");
-        mData.add(6,"리뷰7");
-        mData.add(7,"리뷰8");
-        mData.add(8,"리뷰9");
-        mData.add(9,"리뷰10");
-        mData.add(10,"곰보선장");
-        mData.add(11,"감자");
-        mData.add(12,"공대협");
-        mData.add(13,"17김도");
-        mData.add(14,"김대현");
+        ArrayList<Review> reviewArrayList = new ArrayList<Review>();
+        reviewArrayList = reviewController.getdumiReview();
+        for(int i=0;i<reviewArrayList.size();i++)
+        {
+            mData.add(i,reviewArrayList.get(i).toString());
+        }
 
 
     }
@@ -61,6 +86,8 @@ public class testFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+setReviewArrayList();
 
         //return으로 보여줄 view이다.
         View view = inflater.inflate(R.layout.fragment_test,null);
