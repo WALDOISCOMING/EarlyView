@@ -3,18 +3,21 @@ package layout;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
 import com.khackathon.noobnoob.earlyview.R;
 import com.khackathon.noobnoob.earlyview.review.Review;
 import com.khackathon.noobnoob.earlyview.review.ReviewController;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -24,14 +27,22 @@ import java.util.Date;
 수정자:x
 수정일자:x
 
-테스트용 프래그먼트이다.
+내용:
+테스트용 프래그먼트1이다.
 리스트 뷰를 이용하는 예이다. 이것을 통하여 후에 나올 두개 리뷰와 후기단지원리스트를 만들면된다.
+이것은 어느정도 만들어지면 제거되고 다른것으로 변경시키면 된다.
  */
 public class testFragment extends Fragment {
 
     ArrayList<String> mData = new ArrayList<String>();
 
     ReviewController reviewController = ReviewController.getInstance();
+
+
+
+
+    private TabLayout tabLayout;
+
 
     public testFragment() {
     }
@@ -87,10 +98,12 @@ public class testFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-setReviewArrayList();
+
+        //더미데이터 어레이리스트를 세팅한다.
+        setReviewArrayList();
 
         //return으로 보여줄 view이다.
-        View view = inflater.inflate(R.layout.fragment_test,null);
+        View view = inflater.inflate(R.layout.fragment_test,container,false);
         //아래 mdata를 쓰기위해 부른다.
         setmData();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -102,13 +115,20 @@ setReviewArrayList();
 
         ListView lv = (ListView)view.findViewById(R.id.testListView);
         lv.setAdapter(adapter);
+
+
        // lv.setOnItemClickListener(listener);누를수 있는 기능. 이건 후에 쓸것이다.
+
+
 
 
 
 
         return view;
     }
+
+
+
 
 
 

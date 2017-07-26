@@ -5,9 +5,30 @@
     tools:context="layout.test2Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="274dp"
+            android:bufferType="spannable"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/imgbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="image test"
+
+            />
+
+    </LinearLayout>
+
+
 
 </FrameLayout>
