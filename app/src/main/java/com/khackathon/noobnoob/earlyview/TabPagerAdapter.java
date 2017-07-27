@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import layout.ReviewRootFragment;
 import layout.test2Fragment;
 import layout.testFragment;
 
@@ -34,8 +35,8 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
         // Returning the current tabs
         switch (position) {
             case 0:
-                testFragment test1 = new testFragment();
-                return test1;
+                ReviewRootFragment reviewRootFragment = new ReviewRootFragment();
+                return reviewRootFragment;
             case 1:
                 test2Fragment tabFragment2 = new test2Fragment();
                 return tabFragment2;

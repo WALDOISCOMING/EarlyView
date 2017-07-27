@@ -51,7 +51,7 @@ public class Main extends AppCompatActivity
 
 //탭메뉴를 위한 레이아웃과 뷰페이저이다.
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    public static ViewPager viewPager;
 
 
 
@@ -66,7 +66,7 @@ public class Main extends AppCompatActivity
     {
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("테스트1"));
+        tabLayout.addTab(tabLayout.newTab().setText("리뷰"));
         tabLayout.addTab(tabLayout.newTab().setText("테스트2"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

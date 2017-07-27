@@ -1,6 +1,7 @@
 package layout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -27,12 +28,19 @@ ________________________________________________________________________________
 수정내용:
 edittext에 버튼을 통해 사진 넣기 추가시킴.
 ____________________________________________________________________________________________________
+수정자:길경완
+수정일자:2017_07_27
+수정내용:
+버튼을 누르면 유저 갤러리로 간다. 이거에 대한 내용은 먼저 하던지 내가 오면 하던지하면된다.
+____________________________________________________________________________________________________
 내용:
 글을 쓰는 용도. 이미지와 글을 함께 쓰도록 한다.
 */
 
 public class test2Fragment extends Fragment {
 
+
+    final int REQ_CODE_SELECT_IMAGE=100;
 
     public test2Fragment() {
         // Required empty public constructor
@@ -56,6 +64,14 @@ public class test2Fragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
+
+                /*
+
                 //시작위치
                 int start = imgtext.getSelectionStart();
                 imgtext.append("----------------------");
@@ -66,6 +82,7 @@ public class test2Fragment extends Fragment {
                 Spannable span = imgtext.getText();
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.m);
                 span.setSpan(new ImageSpan(getActivity(),bitmap),start,end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                */
             }
         });
         return view;
