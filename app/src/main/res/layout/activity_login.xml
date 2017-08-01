@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:ems="10"
-        android:text="Id" />
+        android:hint="ID" />
 
     <EditText
         android:id="@+id/loginPasswd"
@@ -33,8 +33,8 @@
         android:layout_below="@+id/loginId"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="password"/>
+        android:hint="password"
+        android:inputType="textPassword" />
 
     <Button
         android:layout_width="wrap_content"
