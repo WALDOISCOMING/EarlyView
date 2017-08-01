@@ -1,4 +1,4 @@
-package layout;
+package com.khackathon.noobnoob.earlyview.fragment;
 
 import android.content.Context;
 import android.content.Intent;

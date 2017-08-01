@@ -1,14 +1,11 @@
-package com.khackathon.noobnoob.earlyview;
+package com.khackathon.noobnoob.earlyview.layout;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,12 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.Toast;
 
-import com.khackathon.noobnoob.earlyview.review.ReviewController;
-
-import layout.test2Fragment;
-import layout.testFragment;
+import com.khackathon.noobnoob.earlyview.Cache;
+import com.khackathon.noobnoob.earlyview.R;
+import com.khackathon.noobnoob.earlyview.TabPagerAdapter;
 
 
 /*
@@ -36,6 +32,16 @@ import layout.testFragment;
 제거:이전 프레그먼트를 위한 onstartFragementSet() 메소드->TabPagerAdapter에서 그 기능을 대신한다.
 제거:Button을 통한 프레그먼트 이동
 생성:tabLayout과 viewPager와 그를 위한 onstartTab() 메소드
+----------------------------------------------------------------------------------------------------
+수정자:길경완
+수정일자:2017_08_01
+수정내용:
+생성:boolean onNavigationItemSelected(MenuItem item)에서 메뉴 아이템 클릭시 이동.
+생성:각 액티비티와 프래그먼트에 제대로 된 패키지를 넣어줌.
+생성:onstartCache()으로 현재 파일이 있는지 없는지 확인하는 메소드 만듦
+생성:onBackPressed()로 앱 종료시키는 것 만듦. 추후에 바로 종료가 아닌 예,아니오로 종료 되도록 해주는
+것 만들어야 함.
+삭제:fragment test1은 아예 삭제, test2는 추후 삭제 예정.
 
 ----------------------------------------------------------------------------------------------------
 내용:
@@ -52,7 +58,7 @@ public class Main extends AppCompatActivity
 //탭메뉴를 위한 레이아웃과 뷰페이저이다.
     private TabLayout tabLayout;
     public static ViewPager viewPager;
-
+    Activity activity;
 
 
 
@@ -98,6 +104,20 @@ public class Main extends AppCompatActivity
         });
     }
 
+    private void onstartCache()
+    {
+        Cache cache = new Cache(this);
+
+      if(cache.getFileExistence()==true)
+      {
+        //바로 메인으로.
+      //    setContentView(R.layout.activity_main);
+      }else
+      {
+          //setContentView(R.layout.activity_login);
+      }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +128,7 @@ public class Main extends AppCompatActivity
 
         //시작하였을 때 탭메뉴를 세팅한다.
         onstartTab();
+        activity = this;
 
 //이건 왼쪽 상단의 메뉴 아이콘이다. 제거하면 메뉴 아이콘이 사라진다.
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -119,6 +140,9 @@ public class Main extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        onstartCache();
+
     }
 
 
@@ -126,12 +150,20 @@ public class Main extends AppCompatActivity
 //뒤로가기를 누른다면 바로 종료인가 아니면 이전 페이지를 기억하여 이전으로 돌아가게 해아하는가?
     @Override
     public void onBackPressed() {
+        moveTaskToBack(true);
+        finish();
+        android.os.Process.killProcess(android.os.Process.myPid());
+        /*
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+
             super.onBackPressed();
+
+         //   activity.finish();종료를 제대로 만들어야한다...
         }
+        */
     }
 
     @Override
@@ -162,18 +194,13 @@ public class Main extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_first) {
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_second) {
+            Toast.makeText(this,"두번째",Toast.LENGTH_LONG).show();
+        } else if (id == R.id.nav_third) {
+            Toast.makeText(this,"세번째",Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

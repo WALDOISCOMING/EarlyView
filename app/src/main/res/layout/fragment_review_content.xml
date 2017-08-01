@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.ReviewContentFragment">
+    tools:context=".fragment.ReviewContentFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/review_content_test"
+        android:id="@+id/review_content_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="" />

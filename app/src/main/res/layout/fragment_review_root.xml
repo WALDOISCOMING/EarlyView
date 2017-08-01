@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/review_root_frame"
 
-    tools:context="layout.ReviewRootFragment">
+    tools:context=".fragment.ReviewRootFragment">
 
 
 

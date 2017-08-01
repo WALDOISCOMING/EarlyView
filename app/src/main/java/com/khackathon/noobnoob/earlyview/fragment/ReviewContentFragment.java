@@ -1,4 +1,4 @@
-package layout;
+package com.khackathon.noobnoob.earlyview.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -36,7 +36,7 @@ public class ReviewContentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_review_content,container,false);
 
         String data = getArguments().getString("DATA");
-        TextView textView = (TextView)view.findViewById(R.id.review_content_test);
+        TextView textView = (TextView)view.findViewById(R.id.review_content_view);
         textView.setText(data);
 
         return view;

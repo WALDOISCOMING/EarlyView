@@ -1,7 +1,5 @@
-package layout;
+package com.khackathon.noobnoob.earlyview.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -24,8 +22,12 @@ import java.util.Date;
 /*
 생성자:길경완
 생성일자:2017_07_27
-수정자:x
-수정일자:x
+----------------------------------------------------------------------------------------------------
+수정자:길경완
+수정일자:2017_07_30
+수정내용:
+trans.addToBackStack(null);으로 back 버튼 기능을 넣음.
+----------------------------------------------------------------------------------------------------
 내용:
 ReviewListFragment이다. 이전 내용은 모두  testFragment와 동일하지만, 이제는 제대로된 이동이 가능하다.
 하지만 아직은 뒤로 돌아가기가 안된다. 또한 값을 Bundle에 저장하여 보낸다.
@@ -64,9 +66,9 @@ public class ReviewListFragment extends Fragment {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction trans = fragmentManager.beginTransaction();
         trans.replace(R.id.review_root_frame, fragment);
-
+        trans.addToBackStack(null);//back 기능.모든 back버튼이 필요하기 전, stack을 쌓아야하는곳임.
         trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        trans.addToBackStack(null);
+
 
 
         trans.commit();
