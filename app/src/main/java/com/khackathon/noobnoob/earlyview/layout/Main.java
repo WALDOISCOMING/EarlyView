@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.khackathon.noobnoob.earlyview.Cache;
 import com.khackathon.noobnoob.earlyview.R;
-import com.khackathon.noobnoob.earlyview.TabPagerAdapter;
+import com.khackathon.noobnoob.earlyview.Adapter.TabPagerAdapter;
 
 
 /*
@@ -43,6 +43,12 @@ import com.khackathon.noobnoob.earlyview.TabPagerAdapter;
 것 만들어야 함.
 삭제:fragment test1은 아예 삭제, test2는 추후 삭제 예정.
 
+----------------------------------------------------------------------------------------------------
+수정자:길경완
+수정일자:2017_08_02
+수정내용:
+생성:onBackPressed() 뒤로가기 버튼에서 만약 프래그먼트 stack이 있는데 뒤로가기를 누르면 stack이 pop되고
+그렇지 않은 0이면 종료된다. 후에 종료 예 아니오 만들어야함
 ----------------------------------------------------------------------------------------------------
 내용:
 메인액티비티이다.
@@ -114,6 +120,7 @@ public class Main extends AppCompatActivity
       //    setContentView(R.layout.activity_main);
       }else
       {
+          //this.finish();
           //setContentView(R.layout.activity_login);
       }
     }
@@ -150,20 +157,18 @@ public class Main extends AppCompatActivity
 //뒤로가기를 누른다면 바로 종료인가 아니면 이전 페이지를 기억하여 이전으로 돌아가게 해아하는가?
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
-        finish();
-        android.os.Process.killProcess(android.os.Process.myPid());
-        /*
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
 
-            super.onBackPressed();
 
-         //   activity.finish();종료를 제대로 만들어야한다...
+        if(getSupportFragmentManager().getBackStackEntryCount()==0)
+        {
+
+            moveTaskToBack(true);
+            finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
+        }else {
+            getSupportFragmentManager().popBackStack();
         }
-        */
+
     }
 
     @Override
@@ -195,8 +200,10 @@ public class Main extends AppCompatActivity
 
 
         if (id == R.id.nav_first) {
+            this.finish();
             Intent intent = new Intent(this,LoginActivity.class);
             startActivity(intent);
+
         } else if (id == R.id.nav_second) {
             Toast.makeText(this,"두번째",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_third) {

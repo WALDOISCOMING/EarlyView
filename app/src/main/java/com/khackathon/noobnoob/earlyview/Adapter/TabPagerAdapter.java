@@ -1,4 +1,4 @@
-package com.khackathon.noobnoob.earlyview;
+package com.khackathon.noobnoob.earlyview.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

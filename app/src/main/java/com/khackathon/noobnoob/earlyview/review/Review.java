@@ -1,24 +1,36 @@
 package com.khackathon.noobnoob.earlyview.review;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 /*
 생성자:길경완
 생성일자:2017_07_25
-수정자:x
-수정일자:x
+----------------------------------------------------------------------------------------------------
+수정자:길경완
+수정일자:2017_08_02
+수정내용:
+    Paracelable을 추가함.
+생성:public int describeContents()
+생성:public Review (Parcel in)
+생성:public void writeToParcel(Parcel dest, int flags)
+생성:public static final Creator<Review> CREATOR
+    ->bundle에서 객체 전달을 위해서.
+----------------------------------------------------------------------------------------------------
 내용:
 실제 DB에 존재하는 Reivew와 동일한 내용을 가지는 class
-
-
+____________________________________________________________________________________________________
 
 
 
  */
-public class Review {
+public class Review implements Parcelable {
     private int reviewID;
     private int userID;
+    private String userName;//이거 애매하네
     private Date reivewDate;
     private String reviewTitle;
     private String reviewContents;
@@ -29,6 +41,8 @@ public class Review {
     private int categoryID;
     private String categoryName;
 
+    public String getUserName(){return userName;}
+    public void setUserName(String userName){this.userName=userName;}
     public int getCategoryID() {
         return categoryID;
     }
@@ -88,6 +102,14 @@ public class Review {
         this.reviewContents = reviewContents;
     }
 
+    public String getSubReviewContents() {
+        if(reviewContents.length()>=20)
+        return this.reviewContents.substring(0,10);
+        else
+            return reviewContents;
+    }
+
+
     public int get후기단ID() {
         return 후기단ID;
     }
@@ -111,6 +133,7 @@ public class Review {
     public void setHit(int hit) {
         this.hit = hit;
     }
+
 
 
 
@@ -138,19 +161,7 @@ public class Review {
                return false;
 
      }
-/*
- private int reviewID;
-    private int userID;
-    private Date reivewDate;
-    private String reviewTitle;
-    private String reviewContents;
-    private int 후기단ID;
-    private  String 후기단Name;
-    private int hit;
 
-    private int categoryID;
-    private String categoryName;
- */
      @Override
      public String toString()
      {
@@ -180,16 +191,45 @@ public class Review {
          return this;
      }
 
-     /*
-     private int reviewID;
-    private int userID;
-    private Date reivewDate;
-    private String reviewTitle;
-    private String reviewContents;
-    private int 후기단ID;
-    private  int 후기단Name;
-    private int hit;
-      */
+
+
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public Review (Parcel in) {
+        reviewID=in.readInt();
+        userID=in.readInt();
+        userName=in.readString();//이거 애매하네
+//        reivewDate=in.readDat;
+        reviewTitle=in.readString();
+        reviewContents=in.readString();
+        후기단ID=in.readInt();
+        후기단Name=in.readString();
+        hit=in.readInt();
+        categoryID=in.readInt();
+        categoryName=in.readString();
+
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
+    public static final Creator<Review> CREATOR = new Creator<Review>() {
+        @Override
+        public Review createFromParcel(Parcel in) {
+            return new Review(in);
+        }
+
+        @Override
+        public Review[] newArray(int size) {
+            return new Review[size];
+        }
+    };
 
 
 

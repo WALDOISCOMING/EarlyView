@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +14,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.khackathon.noobnoob.earlyview.Adapter.ReviewListAdapter;
 import com.khackathon.noobnoob.earlyview.R;
 import com.khackathon.noobnoob.earlyview.review.Review;
 import com.khackathon.noobnoob.earlyview.review.ReviewController;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,53 +32,33 @@ import java.util.Date;
 수정내용:
 trans.addToBackStack(null);으로 back 버튼 기능을 넣음.
 ----------------------------------------------------------------------------------------------------
+수정자:길경완
+수정일자:2017_08_02
+수정내용:
+생성:RecyclerView recyclerView카드뷰 와 LinearLayoutManager mLinearLayoutManager; 카드뷰매니저 변수
+생성:setReviewList()메소드는 ReviewListAdapter로 reivewArrayList를 보내준다.
+제거:void reviewToPosition(String mData) 이제 이 기능인 클릭시 이동을 ReviewListAdapter에서 직접한다.
+제거: AdapterView.OnItemClickListener listener또한 필요없으므로 제거된다.
+----------------------------------------------------------------------------------------------------
 내용:
 ReviewListFragment이다. 이전 내용은 모두  testFragment와 동일하지만, 이제는 제대로된 이동이 가능하다.
 하지만 아직은 뒤로 돌아가기가 안된다. 또한 값을 Bundle에 저장하여 보낸다.
  */
 public class ReviewListFragment extends Fragment {
 
-    String mData[];
-
     ReviewController reviewController = ReviewController.getInstance();
 
 
-    AdapterView.OnItemClickListener listener= new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            // TODO Auto-generated method stub
-            //수정 프래그먼트로 이동.
-            Log.v("review","이동"+mData[position]);
-            reviewToPosition(mData[position]);
+    ArrayList<Review> reviewArrayList;
 
-        }
-
-    };
-
-
-    private void reviewToPosition(String mData)
-    {
-
-        //데[이터 저장을 위한 과정
-        Fragment fragment = new ReviewContentFragment();
-
-        Bundle bundle  = new Bundle(1);
-        bundle.putString("DATA",mData);
-        fragment.setArguments(bundle);
-
-
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction trans = fragmentManager.beginTransaction();
-        trans.replace(R.id.review_root_frame, fragment);
-        trans.addToBackStack(null);//back 기능.모든 back버튼이 필요하기 전, stack을 쌓아야하는곳임.
-        trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+    //카드뷰!
+    private RecyclerView recyclerView;
+    private LinearLayoutManager mLinearLayoutManager;
 
 
 
-        trans.commit();
 
 
-    }
 
     private void setReviewArrayList()
     {
@@ -92,7 +76,7 @@ public class ReviewListFragment extends Fragment {
         reivews[7].setdumiReview(8, 1, date, "제목8", "내용8", 3, "LG", 10, 1, "가전기기");
         reivews[8].setdumiReview(9, 1, date, "제목9", "내용9", 4, "HP", 10, 1, "컴퓨터부문");
         reivews[9].setdumiReview(10, 1, date, "제목10", "내용10", 5, "애플", 10, 1, "컴퓨터부문");
-        ArrayList<Review> reviewArrayList = new ArrayList<Review>();
+        reviewArrayList = new ArrayList<Review>();
 
 
         for(int i=0;i<reivews.length;i++)
@@ -104,18 +88,13 @@ public class ReviewListFragment extends Fragment {
 
     }
 
-    private void setmData()
+
+    private void setReviewList()
     {
-        ArrayList<Review> reviewArrayList = new ArrayList<Review>();
-        reviewArrayList = reviewController.getdumiReview();
-        mData = new String[reviewArrayList.size()];
-        for(int i=0;i<reviewArrayList.size();i++)
-        {
-            mData[i] = reviewArrayList.get(i).getReviewTitle();
-        }
+        ReviewListAdapter adapter = new ReviewListAdapter(getActivity(),reviewArrayList);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
-
-
 
 
 
@@ -124,21 +103,20 @@ public class ReviewListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_review_list, container, false);
-        //아래 mdata를 쓰기위해 부른다.
+
+
+
+        mLinearLayoutManager=new LinearLayoutManager(getActivity());
+        mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView = (RecyclerView) view.findViewById(R.id.review_lists);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(mLinearLayoutManager);
+        //어댑터와 연결
+
+
+
         setReviewArrayList();
-        setmData();
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                getActivity().getApplicationContext(), // 현재 화면의 제어권자
-                R.layout.review_list_item,
-                R.id.review_list_item_textview,
-                //한행마다 보여줄 레이아웃을 지정
-                mData); // 다량의 데이터
-
-        ListView lv = (ListView)view.findViewById(R.id.review_lists);
-
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(listener);//리스트를 누르면 이동.
+        setReviewList();
 
         return view;
 
