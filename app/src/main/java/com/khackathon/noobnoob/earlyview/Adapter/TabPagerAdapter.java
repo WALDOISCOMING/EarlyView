@@ -4,8 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.khackathon.noobnoob.earlyview.fragment.RequestReviewerRootFragment;
 import com.khackathon.noobnoob.earlyview.fragment.ReviewRootFragment;
 import com.khackathon.noobnoob.earlyview.fragment.test2Fragment;
+import com.khackathon.noobnoob.earlyview.requestreviewer.RequestReviewer;
 
 /*
 생성자:길경완
@@ -37,8 +39,8 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
                 ReviewRootFragment reviewRootFragment = new ReviewRootFragment();
                 return reviewRootFragment;
             case 1:
-                test2Fragment tabFragment2 = new test2Fragment();
-                return tabFragment2;
+                RequestReviewerRootFragment requestReviewerRootFragment = new RequestReviewerRootFragment();
+                return requestReviewerRootFragment;
 
             default:
                 return null;
