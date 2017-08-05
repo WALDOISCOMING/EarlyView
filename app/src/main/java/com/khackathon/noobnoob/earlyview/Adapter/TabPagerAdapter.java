@@ -4,10 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.khackathon.noobnoob.earlyview.fragment.RequestReviewerRootFragment;
-import com.khackathon.noobnoob.earlyview.fragment.ReviewRootFragment;
-import com.khackathon.noobnoob.earlyview.fragment.test2Fragment;
-import com.khackathon.noobnoob.earlyview.requestreviewer.RequestReviewer;
+import com.khackathon.noobnoob.earlyview.fragment.requestreviewer.RequestReviewerRootFragment;
+import com.khackathon.noobnoob.earlyview.fragment.review.ReviewRootFragment;
 
 /*
 생성자:길경완

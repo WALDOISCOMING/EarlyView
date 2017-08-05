@@ -1,4 +1,4 @@
-package com.khackathon.noobnoob.earlyview.fragment;
+package com.khackathon.noobnoob.earlyview.fragment.review;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

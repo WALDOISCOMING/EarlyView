@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/request_reviewer_root_frame"
-    tools:context=".fragment.RequestReviewerRootFragment">
+    tools:context=".fragment.requestreviewer.RequestReviewerRootFragment">
 
 
 </FrameLayout>

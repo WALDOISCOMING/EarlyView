@@ -1,4 +1,4 @@
-package com.khackathon.noobnoob.earlyview.fragment;
+package com.khackathon.noobnoob.earlyview.fragment.review;
 
 import android.content.Context;
 import android.net.Uri;
@@ -41,10 +41,13 @@ public class ReviewContentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_review_content,container,false);
 
         Review review  =getArguments().getParcelable("reviewdata");
-        String data = review.getReviewContents();
+        String data = review.getReviewContents()+"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+
         TextView textView = (TextView)view.findViewById(R.id.review_content_view);
         textView.setText(data);
 
+        TextView tv = (TextView)view.findViewById(R.id.review_content_date);
+        tv.setText(review.getHit()+"명이 보았습니다.");
         return view;
     }
 

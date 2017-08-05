@@ -1,4 +1,4 @@
-package com.khackathon.noobnoob.earlyview.fragment;
+package com.khackathon.noobnoob.earlyview.fragment.review;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -64,18 +64,19 @@ public class ReviewListFragment extends Fragment {
     {
         Review[] reivews = new Review[10];
         Date date =new Date();
+
         for(int i=0;i<10;i++)
             reivews[i] = new Review();
-        reivews[0].setdumiReview(1, 1, date, "제목1", "내용1", 1, "삼성", 10, 1, "핸드폰부문");
-        reivews[1].setdumiReview(2, 1, date, "제목2", "내용2", 2, "현대", 10, 1, "자동차부문");
-        reivews[2].setdumiReview(3, 1, date, "제목3", "내용3", 3, "LG", 10, 1, "핸드폰부문");
-        reivews[3].setdumiReview(4, 1, date, "제목4", "내용4", 4, "HP", 10, 1, "컴퓨터부문");
-        reivews[4].setdumiReview(5, 1, date, "제목5", "내용5", 5, "애플", 10, 1, "핸드폰부문");
-        reivews[5].setdumiReview(6, 1, date, "제목6", "내용6", 1, "삼성", 10, 1, "핸드폰부문");
-        reivews[6].setdumiReview(7, 1, date, "제목7", "내용7", 2, "현대", 10, 1, "자동차부문");
-        reivews[7].setdumiReview(8, 1, date, "제목8", "내용8", 3, "LG", 10, 1, "가전기기");
-        reivews[8].setdumiReview(9, 1, date, "제목9", "내용9", 4, "HP", 10, 1, "컴퓨터부문");
-        reivews[9].setdumiReview(10, 1, date, "제목10", "내용10", 5, "애플", 10, 1, "컴퓨터부문");
+        reivews[0].setdumiReview(1, 1, "김대현1",date, "제목1", "내용1", 1, "삼성", 10, 1, "핸드폰부문");
+        reivews[1].setdumiReview(2, 1, "김대현2",date, "제목2", "내용2", 2, "현대", 10, 1, "자동차부문");
+        reivews[2].setdumiReview(3, 1, "김대현3",date, "제목3", "내용3", 3, "LG", 10, 1, "핸드폰부문");
+        reivews[3].setdumiReview(4, 1, "김대현4",date, "제목4", "내용4", 4, "HP", 10, 1, "컴퓨터부문");
+        reivews[4].setdumiReview(5, 1, "김대현5",date, "제목5", "내용5", 5, "애플", 10, 1, "핸드폰부문");
+        reivews[5].setdumiReview(6, 1, "김대현6",date, "제목6", "내용6", 1, "삼성", 10, 1, "핸드폰부문");
+        reivews[6].setdumiReview(7, 1, "김대현7",date, "제목7", "내용7", 2, "현대", 10, 1, "자동차부문");
+        reivews[7].setdumiReview(8, 1, "김대현8",date, "제목8", "내용8", 3, "LG", 10, 1, "가전기기");
+        reivews[8].setdumiReview(9, 1, "김대현9",date, "제목9", "내용9", 4, "HP", 10, 1, "컴퓨터부문");
+        reivews[9].setdumiReview(10, 1,"김대현10",date, "제목10", "내용10", 5, "애플", 10, 1, "컴퓨터부문");
         reviewArrayList = new ArrayList<Review>();
 
 
@@ -84,7 +85,7 @@ public class ReviewListFragment extends Fragment {
             reviewArrayList.add(reivews[i]);
         }
 
-        reviewController.setdumitReivew(reviewArrayList,"컴퓨터부문");
+       // reviewController.setdumitReivew(reviewArrayList,"컴퓨터부문");
 
     }
 

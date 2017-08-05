@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.RequestReviewerListFragment">
+    tools:context=".fragment.requestreviewer.RequestReviewerListFragment">
 
 
     <LinearLayout
@@ -30,7 +30,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:id="@+id/review_lists"
+        android:id="@+id/request_reviewer_lists"
         >
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

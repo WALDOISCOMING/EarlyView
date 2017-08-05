@@ -22,13 +22,6 @@ public class RequestReviewer implements Parcelable {
 
     String requestReviewerName;
 
-    public String getRequestReviewerTitle() {
-        return requestReviewerTitle;
-    }
-
-    public void setRequestReviewerTitle(String requestReviewerTitle) {
-        this.requestReviewerTitle = requestReviewerTitle;
-    }
 
     String requestReviewerTitle;
     String requestReviewerContent;
@@ -36,7 +29,26 @@ public class RequestReviewer implements Parcelable {
     String companyName;
     Date requestReviewerDate;
     boolean requestReviewerSuccess;
+    int hit;
 
+    public int getHit() {
+        return hit;
+    }
+
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
+
+
+    public RequestReviewer(){}
+    public String getRequestReviewerTitle() {
+        return requestReviewerTitle;
+    }
+
+    public void setRequestReviewerTitle(String requestReviewerTitle) {
+        this.requestReviewerTitle = requestReviewerTitle;
+    }
     public int getRequestReviewerID() {
         return requestReviewerID;
     }
@@ -94,7 +106,13 @@ public class RequestReviewer implements Parcelable {
     }
 
 
+    public void setdumiRequestReviewer(String companyName,String requestReviewerTitle,int hit)
+    {
+        setCompanyName(companyName);
+        setRequestReviewerTitle(requestReviewerTitle);
+        setHit(hit);
 
+    }
 
 
 
@@ -106,23 +124,15 @@ public class RequestReviewer implements Parcelable {
     }
 
     public RequestReviewer (Parcel in) {
-        /*
-            int RequestReviewerID;
-    String requestReviewerName;
-    String requestReviewerContent;
-    int companyID;//외래키
-    String companyName;
-    Date requestReviewerDate;
-    boolean requestReviewerSuccess;
 
-         */
+
         requestReviewerID=in.readInt();
         requestReviewerName=in.readString();
         requestReviewerTitle=in.readString();
         requestReviewerContent=in.readString();
         companyID=in.readInt();
         companyName=in.readString();
-
+        hit=in.readInt();
 
     }
 

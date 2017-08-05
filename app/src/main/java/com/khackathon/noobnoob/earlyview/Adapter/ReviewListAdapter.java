@@ -4,8 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -14,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.khackathon.noobnoob.earlyview.R;
-import com.khackathon.noobnoob.earlyview.fragment.ReviewContentFragment;
-import com.khackathon.noobnoob.earlyview.fragment.ReviewListFragment;
+import com.khackathon.noobnoob.earlyview.fragment.review.ReviewContentFragment;
 import com.khackathon.noobnoob.earlyview.review.Review;
 
 import java.util.ArrayList;
@@ -62,9 +58,10 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
         Review nowReview = reviewList.get(position);
 
         holder.review_list_cardview_writerTextView.setText(nowReview.getUserName()); //작성자
-        holder.review_list_cardview_titleTextView.setText(nowReview.getReviewTitle()); //제목
-        holder.review_list_cardview_contentTextVeiw.setText(nowReview.getSubReviewContents()); //내용 일부
+           holder.review_list_cardview_titleTextView.setText(nowReview.getReviewTitle()); //제목
+    //    holder.review_list_cardview_contentTextVeiw.setText(nowReview.getSubReviewContents()); //내용 일부
         holder.review_list_cardview_dateTextView.setText(nowReview.getReivewDate().toString()); //작성일
+        holder.review_list_cardview_hitTextView.setText(nowReview.getHit()+"");//본사람
         holder.cardView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -102,9 +99,8 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
 
         TextView review_list_cardview_titleTextView;
         TextView review_list_cardview_dateTextView;
-        TextView review_list_cardview_contentTextVeiw;
         TextView review_list_cardview_writerTextView;
-        TextView review_list_cardview_countTextView;
+        TextView review_list_cardview_hitTextView;
 
         CardView cardView;
         public ViewHolder(View view) {
@@ -112,9 +108,9 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
 
             review_list_cardview_titleTextView=(TextView)view.findViewById(R.id.review_list_cardview_titleTextView);
             review_list_cardview_dateTextView=(TextView)view.findViewById(R.id.review_list_cardview_dateTextView);
-            review_list_cardview_contentTextVeiw=(TextView)view.findViewById(R.id.review_list_cardview_contentTextVeiw);
+
             review_list_cardview_writerTextView=(TextView)view.findViewById(R.id.review_list_cardview_writerTextView);
-            review_list_cardview_countTextView=(TextView)view.findViewById(R.id.review_content_view);
+            review_list_cardview_hitTextView=(TextView)view.findViewById(R.id.review_list_cardview_hitTextView);
 
             cardView = (CardView)view.findViewById(R.id.review_list_cardview);
         }

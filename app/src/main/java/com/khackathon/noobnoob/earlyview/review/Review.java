@@ -167,11 +167,12 @@ public class Review implements Parcelable {
      {
          return reviewID+""+userID+reivewDate+reviewTitle+reviewContents+categoryName;
      }
-     public void setdumiReview(int mreviewID, int muserID, Date mreivewDate, String mreivewTitle, String mreviewContents,
+     public void setdumiReview(int mreviewID, int muserID,String muserName, Date mreivewDate, String mreivewTitle, String mreviewContents,
                                int m후기단ID, String m후기단Name, int mhit,int mcategoryID,String mcategoryName)
      {
          setReviewID(mcategoryID);
          setUserID(muserID);
+         setUserName(muserName);
          setReivewDate(mreivewDate);
          setReviewTitle(mreivewTitle);
          setReviewContents(mreviewContents);
