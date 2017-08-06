@@ -70,6 +70,12 @@ public class SignInActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        //이전 로그인 확인
+        if(firebaseAuth.getCurrentUser() != null){
+            finish();
+            startActivity(new Intent(getApplicationContext(), Main.class));
+        }
+
     }
 
     //아이디 중복확인
