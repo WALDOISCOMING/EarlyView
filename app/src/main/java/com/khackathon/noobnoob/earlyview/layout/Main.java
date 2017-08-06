@@ -4,10 +4,10 @@ package com.khackathon.noobnoob.earlyview.layout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.khackathon.noobnoob.earlyview.Adapter.TabPagerAdapter;
 import com.khackathon.noobnoob.earlyview.Cache;
 import com.khackathon.noobnoob.earlyview.R;
-import com.khackathon.noobnoob.earlyview.Adapter.TabPagerAdapter;
 
 
 /*
@@ -65,6 +67,8 @@ public class Main extends AppCompatActivity
     private TabLayout tabLayout;
     public static ViewPager viewPager;
     Activity activity;
+
+    private FirebaseAuth firebaseAuth;
 
 
 
@@ -132,6 +136,17 @@ public class Main extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //로그인 안되어있으면 로그인으로
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
+        //로그인 확인
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        Toast.makeText(this,user.getEmail()+"로그인",Toast.LENGTH_SHORT).show();
 
         //시작하였을 때 탭메뉴를 세팅한다.
         onstartTab();

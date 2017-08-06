@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/signInId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/IdCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/signInId"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/signInId"
+        android:text="중복 확인" />
+
+    <EditText
+        android:id="@+id/signInPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signInId"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/signInRePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signInPassword"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="비밀번호 다시 입력"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/birthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signInRePassword"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp"
+        android:text="YY/mm/dd"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/birthDateSelectorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/birthDate"
+        android:layout_alignBottom="@+id/birthDate"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/birthDate"
+        android:text="생일 선택" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/birthDate"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp"
+        android:text="관심사를 선택해 주세요"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/interestA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="11dp"
+        android:text="A"
+        android:onClick="interest"/>
+
+    <CheckBox
+        android:id="@+id/interestB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/birthDateSelectorBtn"
+        android:layout_alignTop="@+id/interestA"
+        android:text="B"
+        android:onClick="interest"/>
+
+    <CheckBox
+        android:id="@+id/interestC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/interestA"
+        android:layout_below="@+id/interestA"
+        android:layout_marginTop="11dp"
+        android:text="C"
+        android:onClick="interest"/>
+
+    <CheckBox
+        android:id="@+id/interestD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/interestB"
+        android:layout_alignTop="@+id/interestC"
+        android:text="D"
+        android:onClick="interest"/>
+
+    <CheckBox
+        android:id="@+id/interestE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/interestC"
+        android:layout_below="@+id/interestC"
+        android:layout_marginTop="11dp"
+        android:text="E"
+        android:onClick="interest"/>
+
+    <CheckBox
+        android:id="@+id/interestF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/interestD"
+        android:layout_alignTop="@+id/interestE"
+        android:text="F"
+        android:onClick="interest"/>
+
+    <Button
+        android:id="@+id/signInBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/interestE"
+        android:layout_below="@+id/interestE"
+        android:layout_marginTop="14dp"
+        android:text="회원가입" />
+
+    <Button
+        android:id="@+id/signInCancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        android:layout_alignBaseline="@+id/signInBtn"
+        android:layout_alignBottom="@+id/signInBtn"
+        android:layout_alignStart="@+id/interestF" />
+
+</RelativeLayout>
