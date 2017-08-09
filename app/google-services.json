@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "923813136904",
+    "firebase_url": "https://earlyview-master.firebaseio.com",
+    "project_id": "earlyview-master",
+    "storage_bucket": "earlyview-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923813136904:android:7100ab528c6198c9",
+        "android_client_info": {
+          "package_name": "com.khackathon.noobnoob.earlyview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923813136904-2qsbl72ler88iev33cvupj1s9vlal1br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khackathon.noobnoob.earlyview",
+            "certificate_hash": "c20265c80a8c008976a32b2b08c673419f0e3778"
+          }
+        },
+        {
+          "client_id": "923813136904-95s73mnp8i966dc307llq5rgrskfh6a8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khackathon.noobnoob.earlyview",
+            "certificate_hash": "01d98b9ed09eb688f07e887b18fcd0a9f242d683"
+          }
+        },
+        {
+          "client_id": "923813136904-df2cqhq2qs4da0vi9c6htjdf6rvkjl7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRmgjXXjtuG8b2fsMmlLiuwb7S3quQuzY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923813136904-df2cqhq2qs4da0vi9c6htjdf6rvkjl7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
