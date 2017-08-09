@@ -74,125 +74,6 @@ public class ReviewContentFragment extends Fragment {
     public void set()
     {
 
-        String ss="\n" +
-                "\n" +
-                "\n" +
-                "<div class=\"se_component se_paragraph default\">\n" +
-                "    <div class=\"se_sectionArea\">\n" +
-                "        <div class=\"se_editArea\">\n" +
-                "            <div class=\"se_viewArea se_ff_nanumgothic se_fs_T3 se_align-center\" >\n" +
-                "                <div class=\"se_editView\">\n" +
-                "                    <div class=\"se_textView\">\n" +
-                "                        <p class=\"se_textarea\"><!-- SE3-TEXT { --><span>음? 실수로 반대로 열어버린것 같네요<br></span><span><br></span><span><strike>상관없으니 그대로 진행합니다</strike></span><!-- } SE3-TEXT --></p>\n" +
-                "                    </div>\n" +
-                "                </div>\n" +
-                "            </div>\n" +
-                "        </div>\n" +
-                "    </div>\n" +
-                "</div>\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "    \n" +
-                "\n" +
-                "\n" +
-                "\t\t<div class=\"se_component se_image default\">\n" +
-                "\t\t\t<div class=\"se_sectionArea se_align-justify\">\n" +
-                "\t\t\t\t<div class=\"se_editArea\">\n" +
-                "\t\t\t\t\t<div class=\"se_viewArea\" >\n" +
-                "\t\t\t\t\t\t<a href=\"#\" onclick=\"return false;\" class=\"se_mediaArea __se_image_link __se_link\" data-linktype=\"img\" data-linkdata='{\"imgId\" : \"SEDOC-1487042410221-694079435_image_3_img\", \"src\" : \"http://postfiles9.naver.net/MjAxNzAyMTNfMTc4/MDAxNDg2OTk2NDAxMTE3.OYkUptt5KLcgra7os4tOvbK4VsuAvpUJpud4fZ3jso8g.mfWVud0PdwnjidFK1CPsu9-e1q4NPzbHfsF9Cp2KaEsg.JPEG.elaha00/KakaoTalk_Moim_311GK6wlDybVtbQPAihbUBj3doKpot.jpg\", \"linkUse\" : \"false\",\"link\" : \"\"}'>\n" +
-                "\t\t\t\t\t\t\t<img src=\"http://postfiles9.naver.net/MjAxNzAyMTNfMTc4/MDAxNDg2OTk2NDAxMTE3.OYkUptt5KLcgra7os4tOvbK4VsuAvpUJpud4fZ3jso8g.mfWVud0PdwnjidFK1CPsu9-e1q4NPzbHfsF9Cp2KaEsg.JPEG.elaha00/KakaoTalk_Moim_311GK6wlDybVtbQPAihbUBj3doKpot.jpg?type=w773\" width=\"1440\" height=\"810\" data-attachment-id=\"IM0aSvqVF54cSA_wVbFMOy1MXP7k\" alt=\"\" class=\"se_mediaImage __se_img_el\" id=\"SEDOC-1487042410221-694079435_image_3_img\">\n" +
-                "\t\t\t\t\t\t</a>\n" +
-                "\t\t\t\t\t\t\t<div class=\"se_editView\">\n" +
-                "\t\t\t\t\t\t\t\t<div class=\"se_textView se_mediaCaption\">\n" +
-                "\t\t\t\t\t\t\t\t\t<span class=\"se_textarea\">모니터의 생명, 전면부!</span>\n" +
-                "\t\t\t\t\t\t\t\t</div>\n" +
-                "\t\t\t\t\t\t\t</div>\n" +
-                "\t\t\t\t\t</div>\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</div>\n" +
-                "\t\t</div>\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "    \n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "<div class=\"se_component se_paragraph default\">\n" +
-                "    <div class=\"se_sectionArea\">\n" +
-                "        <div class=\"se_editArea\">\n" +
-                "            <div class=\"se_viewArea se_ff_nanumgothic se_fs_T3 se_align-center\" >\n" +
-                "                <div class=\"se_editView\">\n" +
-                "                    <div class=\"se_textView\">\n" +
-                "                        <p class=\"se_textarea\"><!-- SE3-TEXT { --><span>뽀샤시하게 보이는 모니터의 전면부가 절 두근두근하게 만드네요<br></span><span><br></span><span>해체를 계속 진행해볼까요!</span><span><br></span><span></span><!-- } SE3-TEXT --></p>\n" +
-                "                    </div>\n" +
-                "                </div>\n" +
-                "            </div>\n" +
-                "        </div>\n" +
-                "    </div>\n" +
-                "</div>\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "    \n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "<div class=\"se_component se_sticker default \">\n" +
-                "\t<div class=\"se_sectionArea se_align-center\">\n" +
-                "\t\t<div class=\"se_editArea\">\n" +
-                "\t\t\t<div class=\"se_viewArea\">\n" +
-                "\t\t\t\t<div id=\"SEDOC-1487042410221-694079435_sticker_2\" class=\"se_sticker_area\">\n" +
-                "\t\t\t\t \t<a href=\"#\" onclick=\"return false;\" class=\"se_mediaArea __se_sticker_link __se_link\" data-linktype=\"sticker\" data-linkdata='{\"src\" : \"http://gfmarket.phinf.naver.net/moon_and_james/original_4.png\", \"packCode\" : \"moon_and_james\", \"seq\" : \"4\", \"width\" : \"110\", \"height\" : \"115\"}'>\n" +
-                "\t\t\t\t\t\t<img src=\"http://gfmarket.phinf.naver.net/moon_and_james/original_4.png?type=p50_50\" class=\"__se_img_el\" alt=\"스티커 이미지\" width=110 height=115>\n" +
-                "\t\t\t\t\t</a>\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</div>\n" +
-                "\t\t</div>\n" +
-                "\t</div>\n" +
-                "</div>\n";
 
 
         String str="미친듯이 더운 이 여름, 우리들에게 필수품이 있다." +
@@ -203,7 +84,7 @@ public class ReviewContentFragment extends Fragment {
                 "<img src='review2'>"+
                 "그리고 세워둘 수 있어서 나름대로 장점이 존재한다. " +
                 "<img src='review3'>";
-        str=ss;
+
 
         imageText = Html.fromHtml(str,
                 new Html.ImageGetter() {
