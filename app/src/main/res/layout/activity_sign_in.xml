@@ -83,7 +83,7 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="11dp"
-        android:text="A"
+        android:text="가전"
         android:onClick="interest"/>
 
     <CheckBox
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/birthDateSelectorBtn"
         android:layout_alignTop="@+id/interestA"
-        android:text="B"
+        android:text="라이프 스타일"
         android:onClick="interest"/>
 
     <CheckBox
@@ -102,7 +102,7 @@
         android:layout_alignStart="@+id/interestA"
         android:layout_below="@+id/interestA"
         android:layout_marginTop="11dp"
-        android:text="C"
+        android:text="오디오"
         android:onClick="interest"/>
 
     <CheckBox
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/interestB"
         android:layout_alignTop="@+id/interestC"
-        android:text="D"
+        android:text="스마트 디바이스"
         android:onClick="interest"/>
 
     <CheckBox
@@ -121,7 +121,7 @@
         android:layout_alignStart="@+id/interestC"
         android:layout_below="@+id/interestC"
         android:layout_marginTop="11dp"
-        android:text="E"
+        android:text="컴퓨터"
         android:onClick="interest"/>
 
     <CheckBox
@@ -130,7 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/interestD"
         android:layout_alignTop="@+id/interestE"
-        android:text="F"
+        android:text="이동수단"
         android:onClick="interest"/>
 
     <Button

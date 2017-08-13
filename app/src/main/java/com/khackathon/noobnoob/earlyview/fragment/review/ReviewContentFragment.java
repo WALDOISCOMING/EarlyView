@@ -64,6 +64,45 @@ public class ReviewContentFragment extends Fragment {
             return R.drawable.review2;
         if (str.equals("review3"))
             return R.drawable.review3;
+        if (str.equals("review4"))
+            return R.drawable.review4;
+        if (str.equals("review5"))
+            return R.drawable.review5;
+        if (str.equals("review6"))
+            return R.drawable.review6;
+        if (str.equals("review7"))
+            return R.drawable.review7;
+        if (str.equals("review8"))
+            return R.drawable.review8;
+        if (str.equals("review9"))
+            return R.drawable.review9;
+        if (str.equals("review10"))
+            return R.drawable.review10;
+        if (str.equals("review11"))
+            return R.drawable.review11;
+        if (str.equals("review12"))
+            return R.drawable.review12;
+        if (str.equals("review13"))
+            return R.drawable.review13;
+        if (str.equals("review14"))
+            return R.drawable.review14;
+        if (str.equals("review15"))
+            return R.drawable.review15;
+        if (str.equals("review16"))
+            return R.drawable.review16;
+        if (str.equals("review17"))
+            return R.drawable.review17;
+        if (str.equals("review18"))
+            return R.drawable.review18;
+        if (str.equals("review19"))
+            return R.drawable.review19;
+        if (str.equals("review20"))
+            return R.drawable.review20;
+        if (str.equals("review21"))
+            return R.drawable.review21;
+
+
+
         else
             return R.drawable.background;
 
