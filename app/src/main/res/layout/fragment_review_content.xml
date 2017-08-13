@@ -24,12 +24,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
-            <ImageView
-                android:layout_width="match_parent"
-
-                android:layout_height="180dp"
-                android:src="@drawable/background"
-                />
             </RelativeLayout>
 
             <LinearLayout
@@ -45,6 +39,7 @@
                     android:layout_marginBottom="1dp">
 
                 <TextView
+                    android:id="@+id/review_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="35dp"
@@ -73,7 +68,7 @@
                     android:textSize="20dp"
                     android:text="writer"
                     android:layout_weight="3"
-                    android:id="@+id/textView2" />
+                    android:id="@+id/review_writer" />
 
                 <TextView
                     android:layout_width="wrap_content"
