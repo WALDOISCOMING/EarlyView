@@ -28,7 +28,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:background="#eee"
                 >
@@ -69,14 +69,29 @@
                     android:text="writer"
                     android:layout_weight="3"
                     android:id="@+id/review_writer" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="#eee"
+            >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:layout_marginBottom="1dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+
                     android:textSize="15dp"
+                    android:id="@+id/review_content_date"
                     android:text="date"
                     android:layout_weight="1"
-                    android:layout_marginEnd="80dp"
+                    android:layout_marginEnd="40dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true" />
                 </RelativeLayout>
@@ -125,7 +140,7 @@
                     android:layout_height="match_parent"
                     android:textSize="20dp"
                     android:text="viewcount"
-                    android:id="@+id/review_content_date"
+                    android:id="@+id/review_content_hit"
                     android:layout_weight="1"
                     />
                 </RelativeLayout>

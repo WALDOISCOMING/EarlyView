@@ -23,6 +23,8 @@ import com.khackathon.noobnoob.earlyview.review.Review;
 
 import org.xml.sax.XMLReader;
 
+import java.text.SimpleDateFormat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -216,7 +218,7 @@ public class ReviewContentFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         Review review = getArguments().getParcelable("reviewdata");
-        String data = review.getReviewContents() + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+//        String data = review.getReviewContents() + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
         //가로세로 크기 구하기
         TextView textView = (TextView) view.findViewById(R.id.review_content_view);
@@ -228,8 +230,13 @@ public class ReviewContentFragment extends Fragment {
 
         textView.setText(imageText);
 
-        TextView tv = (TextView) view.findViewById(R.id.review_content_date);
-        tv.setText(review.getHit() + "명이 보았습니다.");
+        TextView review_hit = (TextView) view.findViewById(R.id.review_content_hit);
+        review_hit.setText(review.getHit() +1+ "명이 보았습니다.");
+
+        TextView review_date = (TextView)view.findViewById(R.id.review_content_date);
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy년MM월dd일HH시mm분");
+
+        review_date.setText(sdf.format(review.getReivewDate()));
 
         review_title.setText("피듀 (Fidue) A73 인이어 이어폰 리뷰");
         review_writer.setText("헤비메탈할렐루야(gre_nada)");

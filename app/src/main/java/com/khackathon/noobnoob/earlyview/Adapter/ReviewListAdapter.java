@@ -17,6 +17,7 @@ import com.khackathon.noobnoob.earlyview.R;
 import com.khackathon.noobnoob.earlyview.fragment.review.ReviewContentFragment;
 import com.khackathon.noobnoob.earlyview.review.Review;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -55,12 +56,18 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
     /** 정보 및 이벤트 처리는 이 메소드에서 구현 **/
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+        if(position==0){
+            holder.review_list_cardview_mainImageView.setImageResource(R.drawable.review10);
+        }else if(position==1){
+            holder.review_list_cardview_mainImageView.setImageResource(R.drawable.reviewlistexample2);
+        }
         Review nowReview = reviewList.get(position);
-
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy년MM월dd일HH시mm분");
         holder.review_list_cardview_writerTextView.setText(nowReview.getUserName()); //작성자
            holder.review_list_cardview_titleTextView.setText(nowReview.getReviewTitle()); //제목
     //    holder.review_list_cardview_contentTextVeiw.setText(nowReview.getSubReviewContents()); //내용 일부
-        holder.review_list_cardview_dateTextView.setText(nowReview.getReivewDate().toString()); //작성일
+
+        holder.review_list_cardview_dateTextView.setText(sdf.format(nowReview.getReivewDate())); //작성일
         holder.review_list_cardview_hitTextView.setText(nowReview.getHit()+"");//본사람
         holder.cardView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -105,7 +112,7 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
         CardView cardView;
         public ViewHolder(View view) {
             super(view);
-
+            review_list_cardview_mainImageView=(ImageView)view.findViewById(R.id.review_list_cardview_mainImageView);
             review_list_cardview_titleTextView=(TextView)view.findViewById(R.id.review_list_cardview_titleTextView);
             review_list_cardview_dateTextView=(TextView)view.findViewById(R.id.review_list_cardview_dateTextView);
 
