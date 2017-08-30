@@ -67,7 +67,7 @@ public class ReviewContentFragment extends Fragment {
     }
 
     public Integer imageSet(String str) {
-
+//
         if (str.equals("review1"))
             return R.drawable.review1;
 
