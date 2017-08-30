@@ -58,8 +58,12 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         if(position==0){
             holder.review_list_cardview_mainImageView.setImageResource(R.drawable.review10);
+            holder.review_list_cardview_testView.setText("신 제품 리뷰");
         }else if(position==1){
             holder.review_list_cardview_mainImageView.setImageResource(R.drawable.reviewlistexample2);
+            holder.review_list_cardview_testView.setText("보통 리뷰");
+        }else{
+            holder.review_list_cardview_testView.setText("보통 리뷰");
         }
         Review nowReview = reviewList.get(position);
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy년MM월dd일HH시mm분");
@@ -108,7 +112,7 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
         TextView review_list_cardview_dateTextView;
         TextView review_list_cardview_writerTextView;
         TextView review_list_cardview_hitTextView;
-
+        TextView review_list_cardview_testView;
         CardView cardView;
         public ViewHolder(View view) {
             super(view);
@@ -118,6 +122,9 @@ public class ReviewListAdapter extends   RecyclerView.Adapter<ReviewListAdapter.
 
             review_list_cardview_writerTextView=(TextView)view.findViewById(R.id.review_list_cardview_writerTextView);
             review_list_cardview_hitTextView=(TextView)view.findViewById(R.id.review_list_cardview_hitTextView);
+
+            review_list_cardview_testView =(TextView)view.findViewById(R.id.review_list_cardview_testView);
+
 
             cardView = (CardView)view.findViewById(R.id.review_list_cardview);
         }
