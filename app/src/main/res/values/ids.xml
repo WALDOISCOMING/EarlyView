@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //input text를 위해서 존재한다. 이것이 없으면 input text에서 오류가 난다.
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+</resources>

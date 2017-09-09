@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.khackathon.noobnoob.earlyview.fragment.requestreviewer.RequestReviewerRootFragment;
+import com.khackathon.noobnoob.earlyview.fragment.rest.RestTestFragment;
 import com.khackathon.noobnoob.earlyview.fragment.review.ReviewRootFragment;
 
 /*
@@ -39,6 +40,9 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 RequestReviewerRootFragment requestReviewerRootFragment = new RequestReviewerRootFragment();
                 return requestReviewerRootFragment;
+            case 2:
+                RestTestFragment restTestFragment = new RestTestFragment();
+                return restTestFragment;
 
             default:
                 return null;

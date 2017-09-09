@@ -84,6 +84,7 @@ public class Main extends AppCompatActivity
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("리뷰"));
         tabLayout.addTab(tabLayout.newTab().setText("후기단"));
+        tabLayout.addTab(tabLayout.newTab().setText("rest api"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         // Initializing ViewPager
