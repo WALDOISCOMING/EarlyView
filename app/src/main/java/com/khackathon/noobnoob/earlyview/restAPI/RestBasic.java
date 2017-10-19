@@ -7,7 +7,7 @@ package com.khackathon.noobnoob.earlyview.restAPI;
 생성자:길경완
 생성일자:2017_09_09
 ____________________________________________________________________________________________________
-
+aa
 내용:
 rest api에서 사용될 기본 Basic이다. 추후 다른곳에서도 쓰일 getStringFromInputStream가 존재함.
 */

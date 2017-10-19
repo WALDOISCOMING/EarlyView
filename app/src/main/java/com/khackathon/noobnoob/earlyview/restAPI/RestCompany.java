@@ -27,7 +27,7 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
 생성자:길경완
 생성일자:2017_09_09
 ____________________________________________________________________________________________________
-
+aa
 내용:
 rest api에서 사용될 Company관련 클래스이다.
 현 페이지를 통해 내용을 역순으로 가져오는 getAllCompanyJsonObjects가 존재함. 이후 이것을 카테고리를 통해
