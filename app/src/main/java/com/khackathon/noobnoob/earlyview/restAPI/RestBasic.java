@@ -31,8 +31,11 @@ import java.util.ArrayList;
 public class RestBasic {
 
 
+        private static String addr = "http://ec2-13-124-173-108.ap-northeast-2.compute.amazonaws.com:8000";
 
-
+        public String getAddr(){
+            return addr;
+        }
 
         //inputstreamreader에 글을 String으로 변환한다. 이것은 이후 Json으로 변환된다.
         protected String getStringFromInputStream(InputStream in){

@@ -51,6 +51,8 @@ rest api를 get,create,delete,update를 테스트한다.
 public class RestTestFragment extends Fragment {
 
 
+
+    int count=1;
     public RestTestFragment() {
         // Required empty public constructor
     }
@@ -72,9 +74,10 @@ public class RestTestFragment extends Fragment {
             @Override
             public void run() {
                 JSONArray jsonArray = new JSONArray();
-                jsonArray = restCompany.getAllCompanyJsonObjects(1);
+                jsonArray = restCompany.getAllCompanyJsonObjects(count);
 
                 final JSONArray finalJsonArray = jsonArray;
+                //UI 변경되는걸 보여주기.
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -123,6 +126,7 @@ public class RestTestFragment extends Fragment {
                 //쓰레드 실행.
             }
         });
+
         final Button deleteButton=(Button)view.findViewById((R.id.deleteButton));
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +134,7 @@ public class RestTestFragment extends Fragment {
                 //쓰레드 실행.
             }
         });
+
         final Button updatebutton=(Button)view.findViewById((R.id.updateButton));
         updatebutton.setOnClickListener(new View.OnClickListener() {
             @Override

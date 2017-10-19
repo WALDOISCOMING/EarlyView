@@ -36,6 +36,13 @@ rest api에서 사용될 Company관련 클래스이다.
 */
 public class RestCompany extends  RestBasic{
 
+    String addr;
+
+    public RestCompany(){
+        RestBasic restBasic=new RestBasic();
+        addr = restBasic.getAddr()+"/company/";
+    }
+
 
     //Arraylist JsonObject을 return한다.일정 이하로 내려가면 page가 +되는건 나중에 만들기로하자.
     public JSONArray getAllCompanyJsonObjects(int page){
@@ -44,7 +51,8 @@ public class RestCompany extends  RestBasic{
         //방지하는 방법은 AVM을 변경하던가 주소를 들어갈때 다른 로컬 주소로 들어가면 된다 AWS 사용하면 이렇게 안해도된다.
 
         //http://127.0.0.1:8000/company/?page=1
-        String address="http://10.0.2.2:8000/company/?page="+page;
+
+        String address=addr+"?page="+page;
         JSONArray jsonArray = new JSONArray();
         try{
             URL url = new URL(address);
@@ -70,14 +78,13 @@ public class RestCompany extends  RestBasic{
 
 //일단 지금은 카테고리 String이다.
     public void postCreateCompany(String companyName,String companyContent,String companyCategory){
-        String address="http://10.0.2.2:8000/company/";
+
 
 //        HttpClient httpClient =new H
         HttpClient httpClient = HttpClientBuilder.create().build();
-        HttpPost httpPost = new HttpPost(address);
+        HttpPost httpPost = new HttpPost(addr);
 
         try{
-
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             //내용 3개를 맞추어 넣어준다.
             nameValuePairs.add(new BasicNameValuePair("company_name",companyName));
