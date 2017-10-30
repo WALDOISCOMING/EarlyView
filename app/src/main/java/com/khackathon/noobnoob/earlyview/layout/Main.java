@@ -203,7 +203,6 @@ public class Main extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
 
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -215,7 +214,7 @@ public class Main extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_first) {
+        if (id == R.id.nav_logout) {
             //로그아웃
             FirebaseAuth.getInstance().signOut();
 
@@ -223,10 +222,10 @@ public class Main extends AppCompatActivity
             Intent intent = new Intent(this,LoginActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_second) {
-            Toast.makeText(this,"두번째",Toast.LENGTH_LONG).show();
-        } else if (id == R.id.nav_third) {
-            Toast.makeText(this,"세번째",Toast.LENGTH_LONG).show();
+        } else if (id == R.id.nav_profile) {
+            Toast.makeText(this,"프로필",Toast.LENGTH_LONG).show();
+        } else if (id == R.id.nav_apply_list) {
+            Toast.makeText(this,"리뷰 신청 내역",Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

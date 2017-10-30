@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/phoneNoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="65dp"
+        android:ems="10"
+        android:hint="전화번호"
+        android:inputType="phone"/>
+
+    <!--사이에 gps설정 필요-->
+
+    <EditText
+        android:id="@+id/receiveLocationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="주소"
+        android:layout_below="@+id/phoneNoText"
+        android:layout_alignStart="@+id/phoneNoText"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/receiveLocationRestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="나머지 주소"
+        android:layout_below="@+id/receiveLocationText"
+        android:layout_alignStart="@+id/receiveLocationText"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/receiveLocationRestText"
+        android:layout_marginBottom="21dp"
+        android:text="확인" />
+</RelativeLayout>

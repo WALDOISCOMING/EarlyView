@@ -3,34 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_first"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="로그아웃" />
+            android:id="@+id/nav_profile"
+            android:title="프로필" />
         <item
-            android:id="@+id/nav_second"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="개인설정2" />
-        <item
-            android:id="@+id/nav_third"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="개인설정3" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="개인설정4" />
+            android:id="@+id/nav_apply_list"
+            android:title="리뷰 신청 내역" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+    </group>
 
 </menu>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="13dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="제품 소개" />
+
+    <EditText
+        android:id="@+id/firstVIewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="30"
+        android:inputType="textPersonName"
+        android:hint="제품의 첫 이미지를 간략하게 적어주세요" />
+
+    <EditText
+        android:id="@+id/reviewRequestText"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:hint="제품 리뷰를 신청해 주셨던 이유를 적어주세요"
+        android:background="@drawable/line_border"
+        android:layout_below="@+id/firstVIewText"/>
+
+    <TextView
+        android:id="@+id/pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:text="2/8" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pager"
+        android:layout_alignEnd="@+id/reviewRequestText"
+        android:text="다음" />
+
+    <Button
+        android:id="@+id/befBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전"
+        android:layout_above="@+id/pager"
+        android:layout_alignStart="@+id/reviewRequestText" />
+
+</RelativeLayout>
